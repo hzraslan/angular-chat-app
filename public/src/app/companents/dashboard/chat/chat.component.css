@@ -1,0 +1,50 @@
+.close{
+    position: absolute;
+    /* margin-left: 900px; */
+    font-size: 20px;
+    margin-top: -5%;
+    margin-left: 85%;
+}
+.block{
+    position: absolute;
+    /* margin-left: 900px; */
+    font-size: 20px;
+    margin-top: -5%;
+    margin-left: 89%;
+    color: blue;
+    cursor: pointer;
+}
+.chat-content{
+    width: 90.5%;
+    height: 79.5%;
+    box-shadow: 5px 10px 18px #888888;
+    padding-left: 5%;
+    /* padding-right: 5%; */
+    /* padding: 5%; */
+    overflow: scroll;
+    background: #f1f0f0;
+    border-left: 20px solid #fffefe;
+    border-top: 20px solid #fffefe;
+    border-right: 20px solid #fffefe;
+    border-bottom: 20px solid #fffefe;
+}
+.chat-form{
+    width: 86%;
+    position: absolute;
+    margin-top: 0.5%;
+    background:  #fffefe;
+    margin-left: -7.1%;
+    padding-left: 7%;
+    padding-right: 6.8%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+#chat-container{
+    /* border: 1px solid; */
+    /* width: 80%; */
+    height: 100%;
+    /* padding-left: 5px; */
+    padding-right: 10px;
+    padding-bottom: 1px;
+    overflow: scroll;
+}

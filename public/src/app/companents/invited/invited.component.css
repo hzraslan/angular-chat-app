@@ -1,0 +1,32 @@
+.content-box{
+    width: 40%;
+    height: 30%;
+    margin-left: 30%;
+    margin-top: 10%;
+}
+.registerbox{
+    background: rgb(197, 231, 245);
+    position: fixed;
+    width: 40%;
+    height: 40%;
+    z-index: 5;
+    margin-left: 18%;
+    margin-top: -20%;
+    -webkit-box-shadow: 0 0 10px rgb(129, 129, 129);
+        box-shadow: 0 0 10px rgb(129, 129, 129);
+}
+.ignored-box{
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+   /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    padding-left: 100px;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto;
+    background-color: rgba(248, 183, 130, 0.979); /* Fallback color */
+    background-color: rgba(248, 183, 130, 0.979); /* Black w/ opacity */
+    z-index: 6;
+}

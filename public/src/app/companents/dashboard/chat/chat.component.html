@@ -1,0 +1,39 @@
+
+   
+    <div class="chat-content">
+        <span [routerLink]="['/dashboard']" class="close" >[x]</span>
+        <span  class="block" ><span *ngIf="!userblocked" (click)="blockUser()">block</span><span *ngIf="userblocked" style="color: red;">blocked</span></span>
+        <!-- <span *ngIf="chats" (click)="removeChat()" style="position: absolute; margin-left: 780px; margin-top: -30px; cursor: pointer;">Delete</span> -->
+        <div id="chat-container" style="overflow: scroll; height: xyz;" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+            <div *ngIf="chat">
+                <div *ngFor="let message of chat.messages">
+                    <div *ngIf="message.commentor._id === user._id" style=" background: rgb(51, 209, 98); box-shadow: 5px 10px 18px #888888; margin-left: 50%; padding: 1px; margin-top: 5px; padding-left: 5px; border-radius: 4px; ">
+                        <span (click)="removeMessage(message)" style="margin-left: 90%; cursor: pointer;">x</span>
+                        <img *ngIf="message.img" src="{{message.img.url}}" width="200px; height200px;">
+                        <p>{{message.comment}}</p>
+                        <span style="margin-left: 80%; font-size: 10px; color: #888888;">{{stringAsDate(message.createdAt)}}</span><br>
+                        <span *ngIf="message.seen === 1 " style="margin-left: 80%; font-size: 10px; color: #f3f2f2;"> &#10004; {{stringAsDate(message.updatedAt)}} </span>
+                    </div>
+                    <div *ngIf="message.commentor._id === adm._id" style=" background: rgb(224, 241, 226); box-shadow: 5px 10px 18px #888888; margin-left: 5%; padding: 1px; padding-left: 5px; margin-top: 5px; border-radius: 4px; margin-right: 40%;">
+                        <img *ngIf="message.img" src="{{message.img.url}}" width="200px; height200px;">
+                        <p>{{message.comment}}</p>
+                        <span style="margin-left: 80%; font-size: 10px; color: #888888;">{{stringAsDate(message.createdAt)}}</span>
+                              
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-form" *ngIf="candoChat">
+            <p *ngIf="newUrl1" style="color:blue;">Doc pinned!</p>
+            <form (submit)="sendChat()" >
+                <textarea (keydown)="sendChat1(chat, $event)" name="comment"  [(ngModel)]="comment" cols="110" rows="2" value="...."></textarea>
+                <input type="submit" value="send" style="width: 50px; height: 30px; position: absolute; cursor: pointer; font-size: 15px; background: rgb(141, 197, 235); border-radius: 4px;  ">
+            </form>
+            <input style="display: none;" #fileInput type="file" class="form-control" (change)="onFileSelected($event)"><br>
+            <button style="font-size: 15px; color: rgb(49, 54, 65); cursor: pointer; margin-top: -20px; position: absolute;" type="button" (click)="fileInput.click()"><i class="fa fa-image" ></i></button>
+            <button type="button"   *ngIf="picture" (click)="onload()" style="margin-top: 10px;" >upload</button>
+            
+                   
+        </div>
+    </div>
+

@@ -1,0 +1,18 @@
+
+<div class="content-box" *ngIf="user">
+  <img *ngIf="inviter" src="{{inviter.url}}" alt="">
+  <h3 *ngIf="inviter">{{inviter.first_name}}</h3>
+  <p>Invited you!!! do you want to accept?</p>
+
+</div>
+<div style=" margin-left: 30%;">
+    <span>Yes I want to register</span>
+    <div id="googleBtn" class="g-signin2">Google</div> <br>
+    <br>
+    
+    <button (click)="removeUser()" style="background: red;">No</button>
+</div>
+
+<div *ngIf="ignored" class="ignored-box">
+  <p>This link is not available! If you still want to continue please <span style="color: blue; cursor: pointer;" [routerLink]="['/']"> Register/Login</span></p>
+</div>

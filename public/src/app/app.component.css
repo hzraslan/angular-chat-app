@@ -1,0 +1,13 @@
+.flashmessage{
+    width: 400px;
+    margin-top: 10px;
+    margin-left: 400px;
+    position: absolute;
+    font-size: 15px;
+    padding-left: 20px;
+    font-weight: bolder;
+    color: white;
+    background: rgb(133, 200, 238);
+    -webkit-box-shadow: 0 0 10px rgb(129, 129, 129);
+        box-shadow: 0 0 10px rgb(129, 129, 129);
+}

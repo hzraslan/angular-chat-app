@@ -1,0 +1,55 @@
+
+<div *ngIf="user" class="dashboard-nav">
+    
+    <img src="{{user.url}}" alt="" style="width: 30%; border-radius: 50%;">
+    <h3 class="header">{{user.first_name}}</h3>
+    <div *ngIf="user.chats" class="friends-list">
+        <h4 style="margin-left: 20%;">messages</h4>
+        <div *ngFor="let chat of user.chats" class="friend-box">
+            <div *ngFor="let usera of chat.user">
+                <div *ngIf="usera._id != user._id">
+                    <img src="{{usera.url}}" style="width: 20%; border-radius: 50%;" >
+                    <h3 class="chat-user-name">{{usera.first_name}}</h3>
+                    <button class="mesage-btn" (click)="goToChat(chat)" ><i class="fa fa-envelope-square"></i></button>
+                    <p class="display-new">{{seenCount(chat.messages, chat)}}</p>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <a (click)="findFriends()" style="color: blue; text-decoration: underline; cursor: pointer;">Find your friends</a><br>
+    <span *ngIf="findfriend">
+        <form (submit)="onsubmitSearch()">
+         <input style="margin-top: 10px;" type="search" name="search" [(ngModel)]="search">
+         <input type="submit" value="find">
+         </form>
+         <br>
+        </span>
+        <div style="position: relative; background: white; padding: 2px; width: 70%;" *ngIf="failedSearch">
+            <p>Invite your friend</p>
+            <button (click)="inviteToChat(search)" style=" margin-left: 10px;  cursor: pointer;">Yes</button>
+            <button (click)="inviteToChat('none')" style="position: absolute; margin-left: 30px;  cursor: pointer;">later</button>
+        </div>
+        <div style="position: relative; background: white; padding: 2px; width: 70%;" *ngIf="searchedUser">
+            <img src="{{searchedUser.url}}" style="width: 20%; border-radius: 50%; position: relative;" >
+             <h3 style="position: absolute; margin-top: -24px; margin-left: 30px;">{{searchedUser.first_name}}</h3>
+             <button (click)="startAChat(searchedUser)" style="position: absolute; margin-left: 50px; margin-top: 5px; cursor: pointer;"><i class="fa fa-envelope-square"></i></button>
+        </div>
+        <div style="position: relative;  padding: 2px; width: 70%;">
+            <h4>blocked users</h4>
+            <p *ngIf="user.blockeds.length < 1"> (none)</p>
+                <div *ngFor="let blocked of user.blockeds" style="border-bottom: 1px solid;" >
+                    <img src="{{blocked.url}}" style="width: 20%; border-radius: 50%; position: relative;" >
+                    <h3 style="position: absolute; margin-top: -24px; margin-left: 30px;">{{blocked.first_name}}</h3>
+                    <button (click)="unblock(blocked)" style="position: absolute; margin-left: 50px; margin-top: 5px; cursor: pointer;">unblock</button>
+                </div>
+        </div>
+    <button (click)="signOut()" style="margin-top: 10px;">Logout</button>
+</div>
+<!-- <div *ngIf="findfriend" class="findfriend-box" >
+
+</div> -->
+<div class="container">
+    <router-outlet  ></router-outlet><br><br>  
+</div>

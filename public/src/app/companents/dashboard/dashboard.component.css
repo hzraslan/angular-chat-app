@@ -1,0 +1,75 @@
+.dashboard-nav{
+    width: 15%;
+    height: 80%;
+    /* border: 1px solid; */
+    box-shadow: 5px 10px 18px #888888;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    padding-left: 3%;
+    padding-top: 5%;
+    background: rgb(241, 206, 192);
+}
+.header{
+    width: 70%;
+    font-size: 1rem;
+    font-family: cursive;
+    color: rgb(14, 140, 250);
+    /* border: 1px solid; */
+}
+.container{
+    border: 2px solid rgb(80, 90, 80);
+    width: 70%;
+    height: 88%;
+    position: fixed;
+    margin-left: 20%;
+    /* padding: 2%; */
+}
+.friends-list{
+    width: 95%;
+    height: 50%;
+    position: relative;
+    overflow: auto;
+    /* border: 3px solid #888888; */
+    margin-left: -16%;
+    margin-top: 10%;
+    /* background: rgb(160, 137, 137); */
+    /* padding: 3%; */
+}
+.findfriend-box{
+    background: rgb(197, 231, 245);
+    position: fixed;
+    width: 40%;
+    height: 40%;
+    z-index: 5;
+    margin-left: 18%;
+    margin-top: 30%;
+    -webkit-box-shadow: 0 0 10px rgb(129, 129, 129);
+        box-shadow: 0 0 10px rgb(129, 129, 129);
+
+}
+.friend-box{
+    border: 1px solid gray;
+    padding: 10px;
+    margin-left: -5%;
+    width: 120%;
+    background: linear-gradient(to right, rgb(235, 129, 129) , rgb(233, 233, 135));
+
+}
+.chat-user-name{
+    margin-left: 30%;
+    margin-top: -20%;
+}
+.mesage-btn{
+    margin-left: 60%;
+    margin-top: -20%;
+    position: absolute;
+    cursor: pointer;
+}
+.display-new{
+    margin-left: 80%;
+    margin-top: -20%;
+    position: absolute;
+    /* cursor: pointer; */
+    color: green;
+}
